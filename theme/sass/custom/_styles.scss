@@ -1,0 +1,97 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+body>nav {
+position: relative;
+background-color: #ccc;
+background: url('/images/noise.png'),-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(50%, #cccccc), color-stop(100%, #b0b0b0));
+background: url('/images/noise.png'),-webkit-linear-gradient(#e0e0e0,#cccccc,#b0b0b0);
+background: url('/images/noise.png'),-moz-linear-gradient(#e0e0e0,#cccccc,#b0b0b0);
+background: url('/images/noise.png'),-o-linear-gradient(#e0e0e0,#cccccc,#b0b0b0);
+background: url('/images/noise.png'),linear-gradient(#e0e0e0,#cccccc,#b0b0b0);
+border-top: 1px solid #f2f2f2;
+border-bottom: 1px solid #8c8c8c;
+padding-top: .45em;
+padding-bottom: .45em;
+margin-bottom: 0;
+border-radius: 0;
+-webkit-border-radius: 0;
+font-size: 1.2em;
+}
+
+body>header, body>nav, body>footer, body #content>article, body #content>div>article, body #content>div>section {
+padding-left: 55px;
+padding-right: 55px;
+}
+
+body>header h1  {
+font-size: 2.2em;
+font-family: "PTSerif",Georgia,Times,"Times New Roman",serif;
+font-weight: normal;
+color: #000000;
+line-height: 1.2em;
+padding-top: 1.7em;
+padding-left: 0em;
+}
+body>nav a {
+color: #6b6b6b;
+font-family: "Lato","Helvetica Neue",Arial,sans-serif;
+text-shadow: #ebebeb 0 1px;
+float: left;
+text-decoration: none;
+font-size: 1.1em;
+padding: .1em 0;
+line-height: 1.5em;
+}
+body>header h1 a, body>header h1 a:visited, body>header h1 a:hover {
+color: #000000;
+text-decoration: none;
+}
+body>header h2 {
+position: absolute;
+top: 135px;
+left: 55px;
+padding-left: 120px;
+}
+body>div>div {
+background: #fff url('/images/noise.png') top left;
+border-right: 1px solid #e0e0e0;
+}
+body>header {
+background: #fff
+}
+body>footer {
+background:url('/images/noise.png'),-webkit-linear-gradient(#e0e0e0,#cccccc,#b0b0b0); 
+}
+
+#main {
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-radius: 0 0 0 0;
+border-radius: 0 0 0 0;
+}
+
+.toggle-sidebar:after {
+position: absolute;
+right: -11px;
+top: 0;
+width: 20px;
+font-size: 1.2em;
+line-height: 1.1em;
+padding-bottom: .15em;
+-moz-border-radius-bottomright: 0.3em;
+-webkit-border-bottom-right-radius: 0.3em;
+border-bottom-right-radius: 0.3em;
+text-align: center;
+background: #fff url('/images/noise.png') top left;
+border-bottom: 1px solid #e0e0e0;
+border-right: 1px solid #e0e0e0;
+text-indent: -1px;
+}
+.post-footer {
+margin-top: 10px;
+padding: 10px;
+background: none repeat scroll 0pt 0pt #eee;
+font-size: 90%;
+color: gray;
+border-radius: .5em;
+}
