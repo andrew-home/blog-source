@@ -1,4 +1,4 @@
 .pygments-cache
 .sass-cache
 qiniu.conf
-
+public/*
