@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://andrew-home.github.io/sitemap.xml 
