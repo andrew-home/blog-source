@@ -57,7 +57,7 @@ background: #fff url('/images/noise.png') top left;
 border-right: 1px solid #e0e0e0;
 }
 body>header {
-background: #fff
+//background: #fff
 }
 body>footer {
 background:url('/images/noise.png'),-webkit-linear-gradient(#e0e0e0,#cccccc,#b0b0b0); 
@@ -94,4 +94,8 @@ background: none repeat scroll 0pt 0pt #eee;
 font-size: 90%;
 color: gray;
 border-radius: .5em;
+}
+
+body {
+  background: #e6e6e6 url('/images/furley-bg.png');
 }
