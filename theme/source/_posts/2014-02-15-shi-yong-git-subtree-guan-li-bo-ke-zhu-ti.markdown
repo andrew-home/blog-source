@@ -31,7 +31,7 @@ blog-source
 ```
 theme 是另外一个repo，用于维护博客样式的变更，采用subtree的形式包含在blog-source这个repo里。在第一次添加theme子目录时，用的命令如下：
 
-```plain mark:3
+```mark:3
 语法：git remote add -f <子仓库名> <子仓库地址>
 解释：其中-f意思是在添加远程仓库之后，立即执行fetch。
 git remote add -f theme git@github.com:andrew-home/octopress-theme.git
