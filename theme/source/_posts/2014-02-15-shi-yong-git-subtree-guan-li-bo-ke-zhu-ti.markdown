@@ -8,6 +8,7 @@ categories:
 ---
 
 # 背景
+
 以下是本博客源码的目录结构
 
 ```plain blog-source mark:14-15
@@ -24,30 +25,32 @@ blog-source
 ├── config.ru
 ├── plugins
 ├── public
-├── sass 
-└── source 
+├── sass -> theme/sass
+├── source -> theme/source
+└── theme
+```
+theme 是另外一个repo，用于维护博客样式的变更，采用subtree的形式包含在blog-source这个repo里。在第一次添加theme子目录时，用的命令如下：
+
+```plain mark:3
+语法：git remote add -f <子仓库名> <子仓库地址>
+解释：其中-f意思是在添加远程仓库之后，立即执行fetch。
+git remote add -f theme git@github.com:andrew-home/octopress-theme.git
 ```
 
-``` ruby Discover  http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/ start:51 mark:52,54-55
-class Fixnum
-  def prime?
-    ('1' * self) !~ /^1?$|^(11+?)\1+$/
-  end
-end
+```mark:3
+语法：git subtree add --prefix=<子目录名> <子仓库名> <分支> --squash
+解释：--squash意思是把subtree的改动合并成一次commit，这样就不用拉取子项目完整的历史记录。--prefix之后的=等号也可以用空格。
+git subtree add --prefix=theme theme fortheme --squash
 ```
 
-{% codeblock Coffeescript Tricks lang:java start:51 mark:51,54-55 %}
-# Given an alphabet:
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
+# 样式更新
 
-# Iterate over part of the alphabet:
-console.log letter for letter in alphabet[4..8]
-{% endcodeblock %}
-
-``` coffeescript Coffeescript Tricks start:51 mark:52,54-55
-# Given an alphabet:
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
-
-# Iterate over part of the alphabet:
-console.log letter for letter in alphabet[4..8]
+先切换到fortheme分支，修改完theme目录下代码之后，git commit提交，然后用以下命令push
+```mark:3
+语法：git subtree push --prefix=<子目录名> <远程分支名> 分支
+git subtree push --prefix=theme theme 
 ```
+
+
+
+
