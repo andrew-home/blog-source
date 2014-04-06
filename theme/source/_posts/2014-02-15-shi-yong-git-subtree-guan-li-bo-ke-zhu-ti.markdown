@@ -45,19 +45,17 @@ git subtree add --prefix=theme theme fortheme --squash
 
 # 样式更新
 
-先切换到fortheme分支，修改完theme目录下代码之后，git commit提交，然后用以下命令push
+由于文章目录是位于source之下，而source又属于主题，为了不让主题这个repo不含有文章目录，所以新建了个fortheme分支，这个分支的source目录下是不含有_posts目录的。
+_
+更新样式时，先切换到fortheme分支，修改完theme目录下代码之后，再切换到master分支（因为fortheme分支没有文章目录，看不到效果），在master分支下review完效果后，再切换回fortheme分支，git commit提交，然后用以下命令push提交到远程
 ```mark:2
 语法：git subtree push --prefix=<子目录名> <远程分支名> 分支
 git subtree push --prefix=theme theme master
 ```
 
-然后切换回master分支，用以下命令合并修改
+最后切换回master分支，用以下命令合并修改、提交
 ```
 git merge fortheme --squash
-```
-
-最后提交master分支
-```
 git push origin master
 ```
 
