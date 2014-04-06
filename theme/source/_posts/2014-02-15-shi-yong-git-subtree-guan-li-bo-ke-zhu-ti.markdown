@@ -31,7 +31,7 @@ blog-source
 ```
 theme 是另外一个repo，用于维护博客样式的变更，采用subtree的形式包含在blog-source这个repo里。在第一次添加theme子目录时，用的命令如下：
 
-```plain mark:3
+```mark:3
 语法：git remote add -f <子仓库名> <子仓库地址>
 解释：其中-f意思是在添加远程仓库之后，立即执行fetch。
 git remote add -f theme git@github.com:andrew-home/octopress-theme.git
@@ -48,6 +48,7 @@ git subtree add --prefix=theme theme fortheme --squash
 由于文章目录是位于source之下，而source又属于主题，为了不让主题这个repo不含有文章目录，所以新建了个fortheme分支，这个分支的source目录下是不含有_posts目录的。
 
 更新样式时，先切换到fortheme分支，修改完theme目录下代码之后，再切换到master分支（因为fortheme分支没有文章目录，看不到效果），在master分支下review完效果后，再切换回fortheme分支，git commit提交，然后用以下命令push提交到远程
+
 ```mark:2
 语法：git subtree push --prefix=<子目录名> <远程分支名> 分支
 git subtree push --prefix=theme theme master
