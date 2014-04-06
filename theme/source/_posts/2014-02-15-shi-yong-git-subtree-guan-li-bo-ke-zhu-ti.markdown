@@ -68,10 +68,17 @@ https://github.com/imathis/octopress/pull/1485
 
 此修改使得octopress 2.0(master)版本也能用上代码渲染时的linenos，start，mark选项。
 
-使用这种pull request，是把它check out到本地的一个新分支，然后再merge到master实现：
+使用这种pull request，是把它check out到本地的一个新分支，然后再merge到master实现。
+首先将.git/config里的octobpress源取消注释
+```
+[remote "octopress"]
+   url = git://github.com/imathis/octopress.git
+   fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+然后fetch这个pr
 ```mark:2
 语法：git fetch <远程仓库名> refs/pull/<pull request序号>/head:<本地分支名>
 git fetch octopress refs/pull/1485/head:update
 ```
-上述命令会在本地新建一个分支来保存pr的代码，然后就可以merge到master来应用pr
-
+上述命令会在本地新建一个分支来保存pr的代码，然后就可以merge到master来应用pr了。
