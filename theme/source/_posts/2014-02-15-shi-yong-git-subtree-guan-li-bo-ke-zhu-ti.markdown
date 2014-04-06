@@ -48,9 +48,29 @@ git subtree add --prefix=theme theme fortheme --squash
 先切换到fortheme分支，修改完theme目录下代码之后，git commit提交，然后用以下命令push
 ```mark:3
 语法：git subtree push --prefix=<子目录名> <远程分支名> 分支
-git subtree push --prefix=theme theme 
+git subtree push --prefix=theme theme master
 ```
 
+然后切换回master分支，用以下命令合并修改
+```
+git merge fortheme --squash
+```
 
+最后提交master分支
+```
+git push origin master
+```
 
+# octopress 代码更新
+
+如果有人修改了octopress的代码，提交了pull request，比如以下这个：
+https://github.com/imathis/octopress/pull/1485
+此修改使得octopress 2.0(master)版本也能用上代码渲染时的linenos，start，mark选项。
+
+使用这种pull request，是把它check out到本地的一个新分支，然后再merge到master实现：
+```
+语法：git fetch <远程仓库名> refs/pull/<pull request序号>/head:<本地分支名>
+git fetch octopress refs/pull/1485/head:update
+```
+上述命令会在本地新建一个分支来保存pr的代码，然后就可以merge到master来应用pr
 
