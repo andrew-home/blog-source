@@ -5,7 +5,10 @@ date: 2014-04-07 15:27:05 +0800
 comments: true
 categories: apache
 ---
-
+Order allow,deny # 这句话的作用是配置allow和deny的顺序，最后一个关键字代表默认策略，第一个圆  
+Allow from all # allow规则，第二个圆  
+deny from 192.9.200.69 # deny规则，第三个圆  
+<!--more--> 
 我们来看下下面的apache的一个配置，具体代码如下：
 ```
 <Directory "D:/TRS/Apache2.2.17/cgi-bin">
@@ -22,7 +25,6 @@ categories: apache
 当我们看到一个apache的配置时，可以从下面的角度来理解。一默认，二顺序，三重叠。
 
 - 上面配置说明
-
 
     1. 一默认
 
