@@ -66,9 +66,9 @@ module Octopress
 
     def self.tableize_code (code, lang, options = {})
       start = options[:start] || 1
-      lines = options[:linenos] || true
+      lines = options[:linenos] || false
       marks = options[:marks] || []
-      table = "<div class='highlight'><table><tr>"
+      table = "<div class='highlight'><table style='width:100%'><tr>"
       table += number_lines(start, code.lines.count, marks) if lines
       table += "<td class='main #{'unnumbered' unless lines} #{lang}'><pre>"
       code.lines.each_with_index do |line,index|

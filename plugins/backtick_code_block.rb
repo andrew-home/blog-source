@@ -31,7 +31,7 @@ module BacktickCodeBlock
         end
 
         # Extra default options
-        @options[:linenos] = true
+        @options[:linenos] = false
         @options[:marks] = []
         @options[:start] = 1
         @options[:end] = nil
