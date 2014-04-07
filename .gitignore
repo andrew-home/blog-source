@@ -2,3 +2,4 @@
 .sass-cache
 qiniu.conf
 public/*
+_deploy
