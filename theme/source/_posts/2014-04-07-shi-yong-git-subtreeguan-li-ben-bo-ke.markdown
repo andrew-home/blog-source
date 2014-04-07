@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "使用git subtree 管理博客主题"
-date: 2014-02-15 16:32:31 +0800
+title: "使用git subtree管理本博客"
+date: 2014-04-07 16:49:18 +0800
 comments: true
-categories: 
+categories:
 - git
 ---
 
@@ -11,7 +11,7 @@ categories:
 
 以下是本博客源码的目录结构
 
-```plain blog-source mark:14-15
+```mark:14-15
 blog-source
 ├── CHANGELOG.markdown
 ├── Gemfile
