@@ -1,0 +1,23 @@
+---
+layout: post
+title: "awk数组"
+date: 2014-04-07 21:55:22 +0800
+comments: true
+categories: 
+- awk
+---
+1.采用 for (val in Array) print Array[val] 的方法得到的遍历是无序的，即使下标val是1、2、3....
+
+2.获得数组个数的方法
+
+split:
+
+    n=split(原字符串, 数组名, 分隔字符) print n
+
+asort(排序）:
+
+    n=print asort(Array)
+
+length:
+
+    n=length(Array)
